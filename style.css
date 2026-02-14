@@ -1,0 +1,97 @@
+﻿:root {
+  --yes-scale: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #ffe3ec 0%, #ffd1dd 40%, #ffc0d0 100%);
+  color: #5f0a31;
+}
+
+.page {
+  width: min(92vw, 560px);
+  text-align: center;
+  padding: 24px 20px 32px;
+}
+
+.heart-wrap {
+  width: clamp(220px, 40vw, 300px);
+  aspect-ratio: 1;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  clip-path: path("M150 270 C40 200 20 100 90 55 C125 35 150 55 150 85 C150 55 175 35 210 55 C280 100 260 200 150 270 Z");
+  filter: drop-shadow(0 12px 18px rgba(95, 10, 49, 0.2));
+}
+
+.heart-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+  line-height: 1.4;
+}
+
+.buttons {
+  position: relative;
+  width: min(360px, 88vw);
+  height: 160px;
+  margin: 24px auto 0;
+}
+
+.btn {
+  position: absolute;
+  top: 40%;
+  min-width: 96px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.yes {
+  left: 35%;
+  background: #ff4d8d;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(var(--yes-scale));
+  transition: transform 180ms ease, filter 180ms ease;
+  box-shadow: 0 8px 15px rgba(255, 77, 141, 0.35);
+}
+
+.yes:hover {
+  filter: brightness(1.06);
+}
+
+.no {
+  left: 65%;
+  background: #fff;
+  color: #a03561;
+  transform: translate(-50%, -50%);
+  transition: left 140ms ease, top 140ms ease;
+  box-shadow: 0 8px 15px rgba(95, 10, 49, 0.2);
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    height: 190px;
+  }
+
+  .btn {
+    min-width: 88px;
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+}
