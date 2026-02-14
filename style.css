@@ -43,6 +43,34 @@ h1 {
   line-height: 1.4;
 }
 
+#namePreview {
+  display: inline-block;
+  min-width: 4ch;
+}
+
+.name-editor {
+  margin: 14px auto 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #7a1c49;
+}
+
+#nameInput {
+  width: min(220px, 55vw);
+  padding: 8px 10px;
+  border: 1px solid #e89bb8;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #5f0a31;
+}
+
+#nameInput:focus {
+  outline: 2px solid #ff7aa9;
+  outline-offset: 1px;
+}
+
 .buttons {
   position: relative;
   width: min(360px, 88vw);

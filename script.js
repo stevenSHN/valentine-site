@@ -1,9 +1,18 @@
 ﻿const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const buttonArea = document.getElementById("buttonArea");
+const nameInput = document.getElementById("nameInput");
+const namePreview = document.getElementById("namePreview");
 
 let yesScale = 1;
 const maxScale = 3.2;
+
+function updateNamePreview(rawName) {
+  const name = (rawName || "").trim();
+  if (namePreview) {
+    namePreview.textContent = name || "小可爱";
+  }
+}
 
 function growYes(step = 0.18) {
   yesScale = Math.min(maxScale, yesScale + step);
@@ -47,3 +56,10 @@ noBtn.addEventListener("click", (event) => {
 });
 
 document.addEventListener("mousemove", evadeOnApproach);
+
+if (nameInput) {
+  nameInput.addEventListener("input", () => {
+    updateNamePreview(nameInput.value);
+  });
+  updateNamePreview(nameInput.value);
+}
